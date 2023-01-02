@@ -9,10 +9,10 @@ const Header = () => {
     <MainHeader>
       <NavLink to="/">
         <span>
-          <img src="./images/logo.png" alt="my logo img" />
+          <img src="images/logo.png" alt="my logo img" />
         </span>
       </NavLink>
-      <Nav />
+      <Nav/>
     </MainHeader>
   );
 };
