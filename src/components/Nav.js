@@ -48,9 +48,10 @@ const Nav = () => {
           <li>
             <NavLink to="/cart" className="navbar-link cart-trolley--link">
               <FiShoppingCart className="cart-trolley" />
-              {
-                cart ? (<span className="cart-total--item">{cart.length}</span>) : (<span className="cart-total--item">0</span>)
-              }
+              {/* {
+                cart ? (<span className="cart-total--item">{cart?.length}</span>) : (<span className="cart-total--item">0</span>)
+              } */}
+              <span className="cart-total--item">{cart?.length}</span>
             </NavLink>
           </li>
         </ul>
