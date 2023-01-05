@@ -9,7 +9,7 @@ const Cart = () => {
   const {cart,clearCart} = useCartContext();
 
 
-  if (cart.length === 0) {
+  if (cart?.length === 0) {
     return (
       <EmptyDiv>
         <h3>No Cart in Item </h3>
