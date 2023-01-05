@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import logo from '../assets/images/logo.png'
 import Nav from "./Nav";
 
 const Header = () => {
@@ -9,7 +10,7 @@ const Header = () => {
     <MainHeader>
       <NavLink to="/">
         <span>
-          <img src="images/logo.png" alt="my logo img" />
+          <img src={logo} alt="my logo img" />
         </span>
       </NavLink>
       <Nav/>
