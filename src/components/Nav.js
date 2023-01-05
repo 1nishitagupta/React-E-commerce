@@ -45,6 +45,7 @@ const Nav = () => {
               Contact
             </NavLink>
           </li>
+
           <li>
             <NavLink to="/cart" className="navbar-link cart-trolley--link">
               <FiShoppingCart className="cart-trolley" />
@@ -89,6 +90,10 @@ const NavBar = styled.nav`
       text-transform: uppercase;
       color: ${({ theme }) => theme.colors.black};
       transition: color 0.3s linear;
+    }
+    .active{
+      color: ${({ theme }) => theme.colors.helper};
+
     }
     &:hover,
     &:active {
@@ -176,7 +181,7 @@ const NavBar = styled.nav`
     opacity: 0;
     transform: translateX(100%);
     /* transform-origin: top; */
-    transition: all 3s linear;
+    transition: all .6s linear;
   }
   .active .navbar-lists {
     visibility: visible;
@@ -184,7 +189,7 @@ const NavBar = styled.nav`
     transform: translateX(0);
     z-index: 999;
     transform-origin: right;
-    transition: all 3s linear;
+    transition: all .6s linear;
     .navbar-link {
       font-size: 4.2rem;
     }
