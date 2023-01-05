@@ -31,6 +31,7 @@ const CartProvider = ({ children }) => {
   }
 
   const addToCart = (id, color, quantity, singleProduct) => {
+    localStorage.setItem("cart", JSON.stringify(state.cart));
     return dispatch({
       type: "ADD_TO_CART",
       payload: { id, color, quantity, singleProduct },
@@ -47,7 +48,7 @@ const CartProvider = ({ children }) => {
 
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(state.cart));
-  }, [addToCart,state.cart]);
+  }, [state.cart]);
 
   return (
     <CartContext.Provider
