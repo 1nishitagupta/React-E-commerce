@@ -46,6 +46,7 @@ export const FilterContextProvider = ({ children }) => {
     dispatch({ type: "CLEAR_FILTERS" });
   };
 
+
   useEffect(() => {
     dispatch({type:"FILTER_PRODUCTS"})
     dispatch({ type: "SORTING_PRODUCTS", payload: products });
