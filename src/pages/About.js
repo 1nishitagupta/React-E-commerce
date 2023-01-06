@@ -1,6 +1,6 @@
 import React from 'react'
-import HeroSection from './components/HeroSection'
-import aboutPic from './assets/images/about.jpg' 
+import HeroSection from '../components/HeroSection'
+import aboutPic from '../assets/images/about.jpg' 
 
 const About = () => {
   const data = {

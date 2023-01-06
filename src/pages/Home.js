@@ -1,9 +1,9 @@
 import React from 'react'
-import FeatureProduct from './components/FeatureProduct'
-import HeroSection from './components/HeroSection'
-import Services from './components/Services'
-import Trusted from './components/Trusted'
-import homePic from './assets/images/hero.jpg' 
+import FeatureProduct from '../components/FeatureProduct'
+import HeroSection from '../components/HeroSection'
+import Services from '../components/Services'
+import Trusted from '../components/Trusted'
+import homePic from '../assets/images/hero.jpg' 
 
 const Home = () => {
   const data = {
