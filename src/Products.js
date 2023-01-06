@@ -7,8 +7,6 @@ import ReactLoading from "react-loading";
 
 const Products = () => {
   const { filter_products } = useFilterContext();
-  console.log(filter_products);
-
   // if(filter_products){
   //   return(
   //     <>
