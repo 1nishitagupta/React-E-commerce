@@ -4,10 +4,49 @@ import styled from "styled-components";
 import { FiShoppingCart } from "react-icons/fi";
 import { CgMenu, CgClose } from "react-icons/cg";
 import {useCartContext} from '../context/cart_context'
+import {Button} from '../styles/Button'
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
+import Login from "./login/Login";
 
 const Nav = () => {
   const {cart} = useCartContext();
   const [menuIcon, setMenuIcon] = useState();
+
+
+  const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 400,
+    bgcolor: 'background.paper',
+    boxShadow: 24,
+    p: 4,
+  };
+  
+  function BasicModal() {
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
+  
+    return (
+      <div>
+        <Button onClick={handleOpen}>Login</Button>
+        <Modal
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+        >
+          <Box sx={style}>
+            <Login/>
+          </Box>
+        </Modal>
+      </div>
+    );
+  }
 
   return (
     <NavBar>
@@ -44,6 +83,9 @@ const Nav = () => {
               onClick={() => setMenuIcon(false)}>
               Contact
             </NavLink>
+          </li>
+          <li>
+            <BasicModal/>
           </li>
 
           <li>
@@ -215,3 +257,9 @@ const NavBar = styled.nav`
 `;
 
 export default Nav;
+
+
+
+
+
+
