@@ -3,9 +3,26 @@ import FilterSection from "./components/FilterSection";
 import ProductList from "./components/ProductList";
 import Sort from "./components/Sort";
 import { useFilterContext } from "./context/filter_context";
+import ReactLoading from "react-loading";
 
 const Products = () => {
-  const {filter_products} = useFilterContext()
+  const { filter_products } = useFilterContext();
+  console.log(filter_products);
+
+  // if(filter_products){
+  //   return(
+  //     <>
+  //       <Wrapper>
+  //         <div className="main-product">
+  //           <div className="loading">
+  //           <ReactLoading type="bubbles" color="#000" />
+  //           </div>
+  //         </div>
+  //       </Wrapper>
+  //     </>
+  //   )
+  // }
+
   return (
     <Wrapper>
       <div className="container grid grid-filter-column">
@@ -18,7 +35,15 @@ const Products = () => {
             <Sort />
           </div>
           <div className="main-product">
-            <ProductList filter_products={filter_products} />
+            {filter_products.length > 0 ? (
+              <>
+                <ProductList filter_products={filter_products} />
+              </>
+            ) : (
+              <div className="loading">
+              <ReactLoading type="bubbles" color="#000" />
+              </div>
+            )}
           </div>
         </section>
       </div>

@@ -11,6 +11,7 @@ import MyImage from './components/MyImage';
 import FormatPrice from './Helpers/FormatPrice'
 import Star from './components/Star';
 import AddToCart from './components/AddToCart';
+import ReactLoading from "react-loading";
 
 
 const API = "https://api.pujakaitem.com/api/products";
@@ -41,7 +42,13 @@ const SingleProduct = () => {
 
 
   if(isSingleLoading){
-    return <div className='page_loading'>...Loading</div>
+    return (
+      <Wrapper >
+        <Container className='container'>
+          <div className='loading'><ReactLoading type="bubbles" color="#000" /></div>
+        </Container>
+      </Wrapper>
+    )
   }
 
   return (

@@ -156,6 +156,12 @@ input, textarea{
     font-size: 1.8rem;
     cursor: pointer;
     }
+    .loading{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:10rem;
+    }
 
 @media (max-width: ${({ theme }) => theme.media.tab}) {
     .container {

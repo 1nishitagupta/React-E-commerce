@@ -6,6 +6,7 @@ const FilterContext = createContext();
 
 const initialState = {
   filter_products: [],
+  isLoading : false,
   all_products: [],
   grid_view: true,
   sorting_value: "lowest",

@@ -96,7 +96,7 @@ const Wrapper = styled.section`
     }
   }
   footer {
-    padding: 14rem 0 9rem 0;
+    padding: 11rem 0 2rem 0;
     background-color: ${({ theme }) => theme.colors.footer_bg};
     h3 {
       color: ${({ theme }) => theme.colors.hr};
@@ -122,7 +122,7 @@ const Wrapper = styled.section`
     }
   }
   .footer-bottom--section {
-    padding-top: 9rem;
+    padding-top: 4rem;
     hr {
       margin-bottom: 2rem;
       color: ${({ theme }) => theme.colors.hr};

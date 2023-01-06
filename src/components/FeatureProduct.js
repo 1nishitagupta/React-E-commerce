@@ -1,23 +1,40 @@
 import { useProductContext } from "../context/productcontext";
 import styled from "styled-components";
 import Product from "./Product";
+import ReactLoading from "react-loading";
 
 const FeatureProduct = () => {
   const { isLoading, featureProducts } = useProductContext();
-
-
+  
   return (
-    <Wrapper className="section">
-      <div className="container">
-        <div className="intro-data">Check Now!</div>
-        <div className="common-heading">Our Feature Services</div>
-        <div className="grid grid-three-column">
-          {featureProducts.map((curElem) => {
-            return <Product key={curElem.id} {...curElem} />;
-          })}
-        </div>
-      </div>
-    </Wrapper>
+    <>
+      {isLoading ? (
+        <>
+          
+          <Wrapper className="section">
+            <div className="container">
+              <div className="intro-data">Check Now!</div>
+              <div className="common-heading">Our Feature Services</div>
+              <div className="loading"><ReactLoading type="bubbles" color="#000" /></div>
+            </div>
+          </Wrapper>
+        </>
+      ) : (
+        <>
+          <Wrapper className="section">
+            <div className="container">
+              <div className="intro-data">Check Now!</div>
+              <div className="common-heading">Our Feature Services</div>
+              <div className="grid grid-three-column">
+                {featureProducts.map((curElem) => {
+                  return <Product key={curElem.id} {...curElem} />;
+                })}
+              </div>
+            </div>
+          </Wrapper>
+        </>
+      )}
+    </>
   );
 };
 
