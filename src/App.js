@@ -11,6 +11,7 @@ import SingleProduct from "./SingleProduct";
 import Error from "./pages/Error";
 import { ThemeProvider } from "styled-components";
 import Footer from "./pages/Footer";
+import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
   const theme = {

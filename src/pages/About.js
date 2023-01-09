@@ -1,9 +1,8 @@
 import React from 'react'
 import HeroSection from '../components/HeroSection'
 import aboutPic from '../assets/images/about.jpg' 
-import Login from '../components/login/Login'
-import { useLoginContext } from '../context/loginContext'
-import LoginCredentialsData from '../loginCredentialsData'
+// import Login from '../components/login/Login'
+// import { useLoginContext } from '../context/loginContext'
 
 const About = () => {
   
@@ -15,7 +14,7 @@ const About = () => {
     <>
       <HeroSection myData={data}/>
     {/* <Login/> */}
-    <LoginCredentialsData/>
+    {/* <LoginCredentialsData/> */}
     </>
   )
 }
