@@ -76,6 +76,7 @@ const Wrapper = styled.section`
   }
   .card {
     border: 0.1rem solid rgb(170 170 170 / 40%);
+    width:100%;
     
     .card-data {
       padding: 0 2rem;
