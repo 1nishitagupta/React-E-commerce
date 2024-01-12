@@ -7,7 +7,7 @@ import { Button } from "../styles/Button";
 import { useCartContext } from "../context/cart_context";
 
 const AddToCart = ({ singleProduct }) => {
-  const {addToCart} = useCartContext();
+  const { addToCart } = useCartContext();
   const { id, colors, stock } = singleProduct;
 
   const [color, setColor] = useState(colors[0]);
@@ -26,13 +26,14 @@ const AddToCart = ({ singleProduct }) => {
       <div className="colors">
         <p>
           Color:
-          {colors.map((curColor, index) => {
+          {colors?.map((curColor, index) => {
             return (
               <button
                 key={index}
                 style={{ backgroundColor: curColor }}
                 className={color === curColor ? "btnStyle active" : "btnStyle"}
-                onClick={() => setColor(curColor)}>
+                onClick={() => setColor(curColor)}
+              >
                 {color === curColor ? <FaCheck className="checkStyle" /> : null}
               </button>
             );
@@ -47,8 +48,10 @@ const AddToCart = ({ singleProduct }) => {
         setIncrease={setIncrease}
       />
 
-    
-      <NavLink to="/cart" onClick={() => addToCart(id, color, quantity, singleProduct)}>
+      <NavLink
+        to="/cart"
+        onClick={() => addToCart(id, color, quantity, singleProduct)}
+      >
         <Button className="btn">Add To Cart</Button>
       </NavLink>
     </Wrapper>
@@ -62,9 +65,9 @@ const Wrapper = styled.section`
     align-items: center;
   }
   .btnStyle {
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 2rem;
     height: 2rem;
     background-color: #000;

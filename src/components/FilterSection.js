@@ -1,58 +1,75 @@
-import React from 'react'
-import styled from 'styled-components';
-import { useFilterContext } from '../context/filter_context';
-import {Button} from '../styles/Button'
+import React from "react";
+import styled from "styled-components";
+import { useFilterContext } from "../context/filter_context";
+import { Button } from "../styles/Button";
 
 const FilterSection = () => {
-  const {filters : {text , category} , updateFilterValue , all_products,clearFilters} = useFilterContext();
+  const {
+    filters: { text, category },
+    updateFilterValue,
+    all_products,
+    clearFilters,
+  } = useFilterContext();
 
-  const getUniqueValue = (data,property) =>{
-    let newVal = data.map((curElm,index)=>{
-      return curElm[property]
-    })
-    
-    return (newVal = ["all", ...new Set(newVal) ]);
-  }
+  const getUniqueValue = (data, property) => {
+    let newVal = data?.map((curElm, index) => {
+      return curElm[property];
+    });
 
-  const categoryData = getUniqueValue(all_products , "category")
-  const companyData = getUniqueValue(all_products , "company")
+    return (newVal = ["all", ...new Set(newVal)]);
+  };
+
+  const categoryData = getUniqueValue(all_products, "category");
+  const companyData = getUniqueValue(all_products, "company");
 
   return (
     <Wrapper>
-      <div className='filter-search'>
-        <form onSubmit={(e)=>  e.preventDefault()}>
-          <input type="text" name="text" value={text} onChange={updateFilterValue} placeholder="Search"/>
+      <div className="filter-search">
+        <form onSubmit={(e) => e.preventDefault()}>
+          <input
+            type="text"
+            name="text"
+            value={text}
+            onChange={updateFilterValue}
+            placeholder="Search"
+          />
         </form>
       </div>
-      <div className='filter-category'>
+      <div className="filter-category">
         <h3>Category</h3>
         <div>
-        {
-          categoryData.map((val,index)=>{
-            return <button key={index}
-            type="buttton"
-            name="category"
-            value={val}
-            onClick={updateFilterValue}
-            className={val === category ? "active" : ""}
-            >
-              {val}
-            </button>
-          })
-        }
+          {categoryData?.map((val, index) => {
+            return (
+              <button
+                key={index}
+                type="buttton"
+                name="category"
+                value={val}
+                onClick={updateFilterValue}
+                className={val === category ? "active" : ""}
+              >
+                {val}
+              </button>
+            );
+          })}
         </div>
       </div>
-      <div className='filter-company'>
+      <div className="filter-company">
         <h3>Company</h3>
         <form>
-          <select name="company" id="company" className='filter-company--select' onClick={updateFilterValue}>
-            {
-              companyData.map((elm,index)=>{
-                return(
-                  <option value={elm} name="company" key={index}>{elm}</option>
-                )
-              })
-            }
+          <select
+            name="company"
+            id="company"
+            className="filter-company--select"
+            onClick={updateFilterValue}
+          >
+            {companyData.map((elm, index) => {
+              return (
+                <option value={elm} name="company" key={index}>
+                  {elm}
+                </option>
+              );
+            })}
           </select>
         </form>
       </div>
@@ -62,8 +79,8 @@ const FilterSection = () => {
         </Button>
       </div>
     </Wrapper>
-  )
-}
+  );
+};
 const Wrapper = styled.section`
   padding: 5rem 0;
   display: flex;
