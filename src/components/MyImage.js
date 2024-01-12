@@ -7,7 +7,7 @@ const MyImage = ({ imgs = [{ url: "" }] }) => {
   return (
     <Wrapper>
       <div className="grid grid-four-column">
-        {imgs.map((curElm, index) => {
+        {imgs?.map((curElm, index) => {
           return (
             <figure key={index}>
               <img

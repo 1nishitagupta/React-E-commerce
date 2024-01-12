@@ -23,8 +23,8 @@ const Trusted = () => {
         "https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image5.png",
     },
     {
-        imgSrc:
-          "https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image6.png",
+      imgSrc:
+        "https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image6.png",
     },
   ];
   return (
@@ -32,13 +32,10 @@ const Trusted = () => {
       <div className="container">
         <h3>Trusted By 1000+ Companies</h3>
         <div className="brand-section-slider">
-          {sliderData.map((val,index) => {
+          {sliderData?.map((val, index) => {
             return (
               <div className="slide" key={index}>
-                <img
-                  src={`${val.imgSrc}`}
-                  alt="trusted-brands"
-                />
+                <img src={`${val.imgSrc}`} alt="trusted-brands" />
               </div>
             );
           })}
