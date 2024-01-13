@@ -63,7 +63,7 @@ const FilterSection = () => {
             className="filter-company--select"
             onClick={updateFilterValue}
           >
-            {companyData.map((elm, index) => {
+            {companyData?.map((elm, index) => {
               return (
                 <option value={elm} name="company" key={index}>
                   {elm}
